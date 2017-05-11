@@ -1,95 +1,40 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('title')
+    Lunch Out
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@push('head')
+    <link href='css/main.css' rel='stylesheet'>
+@endpush
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+<!-- @section('header')
+    <h2>Lunch is always better when good friends are involved.</h2>
+@endsection -->
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+@section('search')
+    <form  class="form-horizontal" method='GET' action='/search'>
+        <div class="input-group input-group-lg" id="searchBox">
+            <span class="input-group-addon textarea-addon">Location</span>
+            <input type="text" class="form-control" name="location" placeholder="City or zip code" required="true">
+            <span class="input-group-addon textarea-addon">Type</span>
+            <input type="text" class="form-control" name="type" placeholder="Type">
+            <span type="submit" class="input-group-btn">
+                <button type="submit" class="btn btn-secondary" id="searchButton" type="button">Find Lunch!</button>
+            </span>
         </div>
-    </body>
-</html>
+    </form>
+@endsection
+
+@section('content')
+
+    <h2>Welcome to <span>LunchOUT!</span></h2>
+
+    <p>LunchOUT! is an app built to make planning lunch out with your friends, coworker, or whomever else you make be inclined to dine with a whole lot easier!
+         Simply compile a list of five choices, share the link with your friends, and everyone gets to vote. Having a difficult time choosing one of the great restaurants on
+         your list? The random button has you covered. If the majority of your crew chooses random, one of the restaurants on your list will be choosen at, you guessed it, random.
+    </p>
+
+    <p>Go out to lunch often? Want to keep track of all the places you've been to recently? Create an account and you can do all that and more!</p>
+
+@endsection
