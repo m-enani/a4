@@ -1,0 +1,1230 @@
+[
+  {
+    "name": "Abruzzese",
+    "term": "abruzzese"
+  },
+  {
+    "name": "Afghan",
+    "term": "afghani"
+  },
+  {
+    "name": "African",
+    "term": "african"
+  },
+  {
+    "name": "Alentejo",
+    "term": "alentejo"
+  },
+  {
+    "name": "Algarve",
+    "term": "algarve"
+  },
+  {
+    "name": "Alsatian",
+    "term": "alsatian"
+  },
+  {
+    "name": "Altoatesine",
+    "term": "altoatesine"
+  },
+  {
+    "name": "American",
+    "term": "newamerican,tradamerican"
+  },
+  {
+    "name": "Andalusian",
+    "term": "andalusian"
+  },
+  {
+    "name": "Apulian",
+    "term": "apulian"
+  },
+  {
+    "name": "Arab Pizza",
+    "term": "arabpizza"
+  },
+  {
+    "name": "Arabian",
+    "term": "arabian"
+  },
+  {
+    "name": "Argentine",
+    "term": "argentine"
+  },
+  {
+    "name": "Armenian",
+    "term": "armenian"
+  },
+  {
+    "name": "Arroceria",
+    "term": "arroceria_paella"
+  },
+  {
+    "name": "Asian Fusion",
+    "term": "asianfusion"
+  },
+  {
+    "name": "Asturian",
+    "term": "asturian"
+  },
+  {
+    "name": "Australian",
+    "term": "australian"
+  },
+  {
+    "name": "Austrian",
+    "term": "austrian"
+  },
+  {
+    "name": "Auvergnat",
+    "term": "auvergnat"
+  },
+  {
+    "name": "Azores",
+    "term": "azores"
+  },
+  {
+    "name": "Baden",
+    "term": "baden"
+  },
+  {
+    "name": "Baguettes",
+    "term": "baguettes"
+  },
+  {
+    "name": "Bangladeshi",
+    "term": "bangladeshi"
+  },
+  {
+    "name": "Barbeque",
+    "term": "bbq"
+  },
+  {
+    "name": "Basque",
+    "term": "basque"
+  },
+  {
+    "name": "Bavarian",
+    "term": "bavarian"
+  },
+  {
+    "name": "Beer Garden",
+    "term": "beergarden"
+  },
+  {
+    "name": "Beer Hall",
+    "term": "beerhall"
+  },
+  {
+    "name": "Beira",
+    "term": "beira"
+  },
+  {
+    "name": "Beisl",
+    "term": "beisl"
+  },
+  {
+    "name": "Belgian",
+    "term": "belgian"
+  },
+  {
+    "name": "Berrichon",
+    "term": "berrichon"
+  },
+  {
+    "name": "Bistros",
+    "term": "bistros"
+  },
+  {
+    "name": "Black Sea",
+    "term": "blacksea"
+  },
+  {
+    "name": "Blowfish",
+    "term": "blowfish"
+  },
+  {
+    "name": "Bourguignon",
+    "term": "bourguignon"
+  },
+  {
+    "name": "Brasseries",
+    "term": "brasseries"
+  },
+  {
+    "name": "Brazilian",
+    "term": "brazilian"
+  },
+  {
+    "name": "Brazilian Empanadas",
+    "term": "brazilianempanadas"
+  },
+  {
+    "name": "Breakfast & Brunch",
+    "term": "breakfast_brunch"
+  },
+  {
+    "name": "British",
+    "term": "british"
+  },
+  {
+    "name": "Buffets",
+    "term": "buffets"
+  },
+  {
+    "name": "Bulgarian",
+    "term": "bulgarian"
+  },
+  {
+    "name": "Burgers",
+    "term": "burgers"
+  },
+  {
+    "name": "Burmese",
+    "term": "burmese"
+  },
+  {
+    "name": "Cafes",
+    "term": "cafes"
+  },
+  {
+    "name": "Cafeteria",
+    "term": "cafeteria"
+  },
+  {
+    "name": "Cajun/Creole",
+    "term": "cajun"
+  },
+  {
+    "name": "Calabrian",
+    "term": "calabrian"
+  },
+  {
+    "name": "Cambodian",
+    "term": "cambodian"
+  },
+  {
+    "name": "Canadian",
+    "term": "newcanadian"
+  },
+  {
+    "name": "Canteen",
+    "term": "canteen"
+  },
+  {
+    "name": "Cantonese",
+    "term": "cantonese"
+  },
+  {
+    "name": "Caribbean",
+    "term": "caribbean"
+  },
+  {
+    "name": "Catalan",
+    "term": "catalan"
+  },
+  {
+    "name": "Central Brazilian",
+    "term": "centralbrazilian"
+  },
+  {
+    "name": "Chee Kufta",
+    "term": "cheekufta"
+  },
+  {
+    "name": "Cheesesteaks",
+    "term": "cheesesteaks"
+  },
+  {
+    "name": "Chicken Shop",
+    "term": "chickenshop"
+  },
+  {
+    "name": "Chicken Wings",
+    "term": "chicken_wings"
+  },
+  {
+    "name": "Chilean",
+    "term": "chilean"
+  },
+  {
+    "name": "Chinese",
+    "term": "chinese"
+  },
+  {
+    "name": "Colombian",
+    "term": "colombian"
+  },
+  {
+    "name": "Comfort Food",
+    "term": "comfortfood"
+  },
+  {
+    "name": "Congee",
+    "term": "congee"
+  },
+  {
+    "name": "Conveyor Belt Sushi",
+    "term": "conveyorsushi"
+  },
+  {
+    "name": "Corsican",
+    "term": "corsican"
+  },
+  {
+    "name": "Creperies",
+    "term": "creperies"
+  },
+  {
+    "name": "Cuban",
+    "term": "cuban"
+  },
+  {
+    "name": "Cucina campana",
+    "term": "cucinacampana"
+  },
+  {
+    "name": "Curry Sausage",
+    "term": "currysausage"
+  },
+  {
+    "name": "Cypriot",
+    "term": "cypriot"
+  },
+  {
+    "name": "Czech",
+    "term": "czech"
+  },
+  {
+    "name": "Czech/Slovakian",
+    "term": "czechslovakian"
+  },
+  {
+    "name": "Danish",
+    "term": "danish"
+  },
+  {
+    "name": "Delis",
+    "term": "delis"
+  },
+  {
+    "name": "Dim Sum",
+    "term": "dimsum"
+  },
+  {
+    "name": "Diners",
+    "term": "diners"
+  },
+  {
+    "name": "Dinner Theater",
+    "term": "dinnertheater"
+  },
+  {
+    "name": "Dominican",
+    "term": "dominican"
+  },
+  {
+    "name": "Donburi",
+    "term": "donburi"
+  },
+  {
+    "name": "Dumplings",
+    "term": "dumplings"
+  },
+  {
+    "name": "Eastern European",
+    "term": "eastern_european"
+  },
+  {
+    "name": "Eastern German",
+    "term": "easterngerman"
+  },
+  {
+    "name": "Eastern Mexican",
+    "term": "easternmexican"
+  },
+  {
+    "name": "Egyptian",
+    "term": "egyptian"
+  },
+  {
+    "name": "Emilian",
+    "term": "emilian"
+  },
+  {
+    "name": "Ethiopian",
+    "term": "ethiopian"
+  },
+  {
+    "name": "Fado Houses",
+    "term": "fado_houses"
+  },
+  {
+    "name": "Falafel",
+    "term": "falafel"
+  },
+  {
+    "name": "Fast Food",
+    "term": "hotdogs"
+  },
+  {
+    "name": "Filipino",
+    "term": "filipino"
+  },
+  {
+    "name": "Fischbroetchen",
+    "term": "fischbroetchen"
+  },
+  {
+    "name": "Fish & Chips",
+    "term": "fishnchips"
+  },
+  {
+    "name": "Flatbread",
+    "term": "flatbread"
+  },
+  {
+    "name": "Flemish",
+    "term": "flemish"
+  },
+  {
+    "name": "Fondue",
+    "term": "fondue"
+  },
+  {
+    "name": "Food Court",
+    "term": "food_court"
+  },
+  {
+    "name": "Food Stands",
+    "term": "foodstands"
+  },
+  {
+    "name": "Freiduria",
+    "term": "freiduria"
+  },
+  {
+    "name": "French",
+    "term": "french"
+  },
+  {
+    "name": "French Southwest",
+    "term": "sud_ouest"
+  },
+  {
+    "name": "Friulan",
+    "term": "friulan"
+  },
+  {
+    "name": "Fuzhou",
+    "term": "fuzhou"
+  },
+  {
+    "name": "Galician",
+    "term": "galician"
+  },
+  {
+    "name": "Game Meat",
+    "term": "gamemeat"
+  },
+  {
+    "name": "Gastropubs",
+    "term": "gastropubs"
+  },
+  {
+    "name": "Georgian",
+    "term": "georgian"
+  },
+  {
+    "name": "German",
+    "term": "german"
+  },
+  {
+    "name": "Giblets",
+    "term": "giblets"
+  },
+  {
+    "name": "Gluten-Free",
+    "term": "gluten_free"
+  },
+  {
+    "name": "Gozleme",
+    "term": "gozleme"
+  },
+  {
+    "name": "Greek",
+    "term": "greek"
+  },
+  {
+    "name": "Guamanian",
+    "term": "guamanian"
+  },
+  {
+    "name": "Gyudon",
+    "term": "gyudon"
+  },
+  {
+    "name": "Hainan",
+    "term": "hainan"
+  },
+  {
+    "name": "Haitian",
+    "term": "haitian"
+  },
+  {
+    "name": "Hakka",
+    "term": "hakka"
+  },
+  {
+    "name": "Halal",
+    "term": "halal"
+  },
+  {
+    "name": "Hand Rolls",
+    "term": "handrolls"
+  },
+  {
+    "name": "Hawaiian",
+    "term": "hawaiian"
+  },
+  {
+    "name": "Henghwa",
+    "term": "henghwa"
+  },
+  {
+    "name": "Hessian",
+    "term": "hessian"
+  },
+  {
+    "name": "Heuriger",
+    "term": "heuriger"
+  },
+  {
+    "name": "Himalayan/Nepalese",
+    "term": "himalayan"
+  },
+  {
+    "name": "Hokkien",
+    "term": "hokkien"
+  },
+  {
+    "name": "Homemade Food",
+    "term": "homemadefood"
+  },
+  {
+    "name": "Honduran",
+    "term": "honduran"
+  },
+  {
+    "name": "Hong Kong Style Cafe",
+    "term": "hkcafe"
+  },
+  {
+    "name": "Horumon",
+    "term": "horumon"
+  },
+  {
+    "name": "Hot Dogs",
+    "term": "hotdog"
+  },
+  {
+    "name": "Hot Pot",
+    "term": "hotpot"
+  },
+  {
+    "name": "Hunan",
+    "term": "hunan"
+  },
+  {
+    "name": "Hungarian",
+    "term": "hungarian"
+  },
+  {
+    "name": "Iberian",
+    "term": "iberian"
+  },
+  {
+    "name": "Indian",
+    "term": "indpak"
+  },
+  {
+    "name": "Indonesian",
+    "term": "indonesian"
+  },
+  {
+    "name": "International",
+    "term": "international"
+  },
+  {
+    "name": "Irish",
+    "term": "irish"
+  },
+  {
+    "name": "Island Pub",
+    "term": "island_pub"
+  },
+  {
+    "name": "Israeli",
+    "term": "israeli"
+  },
+  {
+    "name": "Italian",
+    "term": "italian"
+  },
+  {
+    "name": "Izakaya",
+    "term": "izakaya"
+  },
+  {
+    "name": "Jaliscan",
+    "term": "jaliscan"
+  },
+  {
+    "name": "Japanese",
+    "term": "japanese"
+  },
+  {
+    "name": "Japanese Curry",
+    "term": "japacurry"
+  },
+  {
+    "name": "Jewish",
+    "term": "jewish"
+  },
+  {
+    "name": "Kaiseki",
+    "term": "kaiseki"
+  },
+  {
+    "name": "Kebab",
+    "term": "kebab"
+  },
+  {
+    "name": "Kopitiam",
+    "term": "kopitiam"
+  },
+  {
+    "name": "Korean",
+    "term": "korean"
+  },
+  {
+    "name": "Kosher",
+    "term": "kosher"
+  },
+  {
+    "name": "Kurdish",
+    "term": "kurdish"
+  },
+  {
+    "name": "Kushikatsu",
+    "term": "kushikatsu"
+  },
+  {
+    "name": "Lahmacun",
+    "term": "lahmacun"
+  },
+  {
+    "name": "Laos",
+    "term": "laos"
+  },
+  {
+    "name": "Laotian",
+    "term": "laotian"
+  },
+  {
+    "name": "Latin American",
+    "term": "latin"
+  },
+  {
+    "name": "Lebanese",
+    "term": "lebanese"
+  },
+  {
+    "name": "Ligurian",
+    "term": "ligurian"
+  },
+  {
+    "name": "Live/Raw Food",
+    "term": "raw_food"
+  },
+  {
+    "name": "Lumbard",
+    "term": "lumbard"
+  },
+  {
+    "name": "Lyonnais",
+    "term": "lyonnais"
+  },
+  {
+    "name": "Madeira",
+    "term": "madeira"
+  },
+  {
+    "name": "Malaysian",
+    "term": "malaysian"
+  },
+  {
+    "name": "Mamak",
+    "term": "mamak"
+  },
+  {
+    "name": "Mauritius",
+    "term": "mauritius"
+  },
+  {
+    "name": "Meatballs",
+    "term": "meatballs"
+  },
+  {
+    "name": "Mediterranean",
+    "term": "mediterranean"
+  },
+  {
+    "name": "Mexican",
+    "term": "mexican"
+  },
+  {
+    "name": "Middle Eastern",
+    "term": "mideastern"
+  },
+  {
+    "name": "Milk Bars",
+    "term": "milkbars"
+  },
+  {
+    "name": "Minho",
+    "term": "minho"
+  },
+  {
+    "name": "Modern Australian",
+    "term": "modern_australian"
+  },
+  {
+    "name": "Modern European",
+    "term": "modern_european"
+  },
+  {
+    "name": "Mongolian",
+    "term": "mongolian"
+  },
+  {
+    "name": "Moroccan",
+    "term": "moroccan"
+  },
+  {
+    "name": "Napoletana",
+    "term": "napoletana"
+  },
+  {
+    "name": "New Mexican Cuisine",
+    "term": "newmexican"
+  },
+  {
+    "name": "New Zealand",
+    "term": "newzealand"
+  },
+  {
+    "name": "Nicaraguan",
+    "term": "nicaraguan"
+  },
+  {
+    "name": "Nicoise",
+    "term": "nicois"
+  },
+  {
+    "name": "Night Food",
+    "term": "nightfood"
+  },
+  {
+    "name": "Nikkei",
+    "term": "nikkei"
+  },
+  {
+    "name": "Noodles",
+    "term": "noodles"
+  },
+  {
+    "name": "Norcinerie",
+    "term": "norcinerie"
+  },
+  {
+    "name": "Northeastern Brazilian",
+    "term": "northeasternbrazilian"
+  },
+  {
+    "name": "Northern Brazilian",
+    "term": "northernbrazilian"
+  },
+  {
+    "name": "Northern German",
+    "term": "northerngerman"
+  },
+  {
+    "name": "Northern Mexican",
+    "term": "northernmexican"
+  },
+  {
+    "name": "Nyonya",
+    "term": "nyonya"
+  },
+  {
+    "name": "Oaxacan",
+    "term": "oaxacan"
+  },
+  {
+    "name": "Oden",
+    "term": "oden"
+  },
+  {
+    "name": "Okinawan",
+    "term": "okinawan"
+  },
+  {
+    "name": "Okonomiyaki",
+    "term": "okonomiyaki"
+  },
+  {
+    "name": "Onigiri",
+    "term": "onigiri"
+  },
+  {
+    "name": "Open Sandwiches",
+    "term": "opensandwiches"
+  },
+  {
+    "name": "Oriental",
+    "term": "oriental"
+  },
+  {
+    "name": "Ottoman Cuisine",
+    "term": "ottomancuisine"
+  },
+  {
+    "name": "Oyakodon",
+    "term": "oyakodon"
+  },
+  {
+    "name": "Paella",
+    "term": "arroceria_paella"
+  },
+  {
+    "name": "Pakistani",
+    "term": "pakistani"
+  },
+  {
+    "name": "Palatine",
+    "term": "palatine"
+  },
+  {
+    "name": "Pan Asian",
+    "term": "panasian"
+  },
+  {
+    "name": "Parent Cafes",
+    "term": "eltern_cafes"
+  },
+  {
+    "name": "Parma",
+    "term": "parma"
+  },
+  {
+    "name": "Pekinese",
+    "term": "pekinese"
+  },
+  {
+    "name": "Persian/Iranian",
+    "term": "persian"
+  },
+  {
+    "name": "Peruvian",
+    "term": "peruvian"
+  },
+  {
+    "name": "PF/Comercial",
+    "term": "pfcomercial"
+  },
+  {
+    "name": "Piemonte",
+    "term": "piemonte"
+  },
+  {
+    "name": "Pierogis",
+    "term": "pierogis"
+  },
+  {
+    "name": "Pita",
+    "term": "pita"
+  },
+  {
+    "name": "Pizza",
+    "term": "pizza"
+  },
+  {
+    "name": "Polish",
+    "term": "polish"
+  },
+  {
+    "name": "Pop-Up Restaurants",
+    "term": "popuprestaurants"
+  },
+  {
+    "name": "Portuguese",
+    "term": "portuguese"
+  },
+  {
+    "name": "Potatoes",
+    "term": "potatoes"
+  },
+  {
+    "name": "Poutineries",
+    "term": "poutineries"
+  },
+  {
+    "name": "Provencal",
+    "term": "provencal"
+  },
+  {
+    "name": "Pub Food",
+    "term": "pubfood"
+  },
+  {
+    "name": "Pueblan",
+    "term": "pueblan"
+  },
+  {
+    "name": "Puerto Rican",
+    "term": "puertorican"
+  },
+  {
+    "name": "Ramen",
+    "term": "ramen"
+  },
+  {
+    "name": "Reunion",
+    "term": "reunion"
+  },
+  {
+    "name": "Rhinelandian",
+    "term": "rhinelandian"
+  },
+  {
+    "name": "Ribatejo",
+    "term": "ribatejo"
+  },
+  {
+    "name": "Rice",
+    "term": "riceshop"
+  },
+  {
+    "name": "Robatayaki",
+    "term": "robatayaki"
+  },
+  {
+    "name": "Rodizios",
+    "term": "rodizios"
+  },
+  {
+    "name": "Roman",
+    "term": "roman"
+  },
+  {
+    "name": "Romanian",
+    "term": "romanian"
+  },
+  {
+    "name": "Rotisserie Chicken",
+    "term": "rotisserie_chicken"
+  },
+  {
+    "name": "Russian",
+    "term": "russian"
+  },
+  {
+    "name": "Salad",
+    "term": "salad"
+  },
+  {
+    "name": "Salvadoran",
+    "term": "salvadoran"
+  },
+  {
+    "name": "Sandwiches",
+    "term": "sandwiches"
+  },
+  {
+    "name": "Sardinian",
+    "term": "sardinian"
+  },
+  {
+    "name": "Scandinavian",
+    "term": "scandinavian"
+  },
+  {
+    "name": "Schnitzel",
+    "term": "schnitzel"
+  },
+  {
+    "name": "Scottish",
+    "term": "scottish"
+  },
+  {
+    "name": "Seafood",
+    "term": "seafood"
+  },
+  {
+    "name": "Senegalese",
+    "term": "senegalese"
+  },
+  {
+    "name": "Serbo Croatian",
+    "term": "serbocroatian"
+  },
+  {
+    "name": "Shanghainese",
+    "term": "shanghainese"
+  },
+  {
+    "name": "Sicilian",
+    "term": "sicilian"
+  },
+  {
+    "name": "Signature Cuisine",
+    "term": "signature_cuisine"
+  },
+  {
+    "name": "Singaporean",
+    "term": "singaporean"
+  },
+  {
+    "name": "Slovakian",
+    "term": "slovakian"
+  },
+  {
+    "name": "Soba",
+    "term": "soba"
+  },
+  {
+    "name": "Soul Food",
+    "term": "soulfood"
+  },
+  {
+    "name": "Soup",
+    "term": "soup"
+  },
+  {
+    "name": "South African",
+    "term": "southafrican"
+  },
+  {
+    "name": "Southern",
+    "term": "southern"
+  },
+  {
+    "name": "Spanish",
+    "term": "spanish"
+  },
+  {
+    "name": "Sri Lankan",
+    "term": "srilankan"
+  },
+  {
+    "name": "Steakhouses",
+    "term": "steak"
+  },
+  {
+    "name": "Sukiyaki",
+    "term": "sukiyaki"
+  },
+  {
+    "name": "Supper Clubs",
+    "term": "supperclubs"
+  },
+  {
+    "name": "Sushi Bars",
+    "term": "sushi"
+  },
+  {
+    "name": "Swabian",
+    "term": "swabian"
+  },
+  {
+    "name": "Swedish",
+    "term": "swedish"
+  },
+  {
+    "name": "Swiss Food",
+    "term": "swissfood"
+  },
+  {
+    "name": "Syrian",
+    "term": "syrian"
+  },
+  {
+    "name": "Szechuan",
+    "term": "szechuan"
+  },
+  {
+    "name": "Tabernas",
+    "term": "tabernas"
+  },
+  {
+    "name": "Tacos",
+    "term": "tacos"
+  },
+  {
+    "name": "Taiwanese",
+    "term": "taiwanese"
+  },
+  {
+    "name": "Takoyaki",
+    "term": "takoyaki"
+  },
+  {
+    "name": "Tamales",
+    "term": "tamales"
+  },
+  {
+    "name": "Tapas Bars",
+    "term": "tapas"
+  },
+  {
+    "name": "Tapas/Small Plates",
+    "term": "tapasmallplates"
+  },
+  {
+    "name": "Tavola Calda",
+    "term": "tavolacalda"
+  },
+  {
+    "name": "Tempura",
+    "term": "tempura"
+  },
+  {
+    "name": "Teochew",
+    "term": "teochew"
+  },
+  {
+    "name": "Teppanyaki",
+    "term": "teppanyaki"
+  },
+  {
+    "name": "Tex-Mex",
+    "term": "tex-mex"
+  },
+  {
+    "name": "Thai",
+    "term": "thai"
+  },
+  {
+    "name": "Themed Cafes",
+    "term": "themedcafes"
+  },
+  {
+    "name": "Tonkatsu",
+    "term": "tonkatsu"
+  },
+  {
+    "name": "Traditional Norwegian",
+    "term": "norwegian"
+  },
+  {
+    "name": "Traditional Swedish",
+    "term": "traditional_swedish"
+  },
+  {
+    "name": "Tras-os-Montes",
+    "term": "tras_os_montes"
+  },
+  {
+    "name": "Trattorie",
+    "term": "trattorie"
+  },
+  {
+    "name": "Trinidadian",
+    "term": "trinidadian"
+  },
+  {
+    "name": "Turkish",
+    "term": "turkish"
+  },
+  {
+    "name": "Turkish Ravioli",
+    "term": "turkishravioli"
+  },
+  {
+    "name": "Tuscan",
+    "term": "tuscan"
+  },
+  {
+    "name": "Udon",
+    "term": "udon"
+  },
+  {
+    "name": "Ukrainian",
+    "term": "ukrainian"
+  },
+  {
+    "name": "Unagi",
+    "term": "unagi"
+  },
+  {
+    "name": "Uzbek",
+    "term": "uzbek"
+  },
+  {
+    "name": "Vegan",
+    "term": "vegan"
+  },
+  {
+    "name": "Vegetarian",
+    "term": "vegetarian"
+  },
+  {
+    "name": "Venetian",
+    "term": "venetian"
+  },
+  {
+    "name": "Venezuelan",
+    "term": "venezuelan"
+  },
+  {
+    "name": "Venison",
+    "term": "venison"
+  },
+  {
+    "name": "Vietnamese",
+    "term": "vietnamese"
+  },
+  {
+    "name": "Waffles",
+    "term": "waffles"
+  },
+  {
+    "name": "Western Style Japanese Food",
+    "term": "westernjapanese"
+  },
+  {
+    "name": "Wok",
+    "term": "wok"
+  },
+  {
+    "name": "Wraps",
+    "term": "wraps"
+  },
+  {
+    "name": "Yakiniku",
+    "term": "yakiniku"
+  },
+  {
+    "name": "Yakitori",
+    "term": "yakitori"
+  },
+  {
+    "name": "Yucatan",
+    "term": "yucatan"
+  },
+  {
+    "name": "Yugoslav",
+    "term": "yugoslav"
+  }
+]

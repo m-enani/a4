@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/search', 'RestaurantSearchController@search');
+Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'RestaurantSearchController@autocomplete'));
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

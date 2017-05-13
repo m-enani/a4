@@ -18,12 +18,39 @@
             <span class="input-group-addon textarea-addon">Location</span>
             <input type="text" class="form-control" name="location" placeholder="City or zip code" required="true">
             <span class="input-group-addon textarea-addon">Type</span>
-            <input type="text" class="form-control" name="type" placeholder="Type">
+            <input type="text" class="typeahead form-control" autocomplete="off" name="type" placeholder="ex. 'American, Japanase, etc.'" required="true">
             <span type="submit" class="input-group-btn">
                 <button type="submit" class="btn btn-secondary" id="searchButton" type="button">Find Lunch!</button>
             </span>
         </div>
     </form>
+
+    <!-- script from: http://itsolutionstuff.com/post/laravel-5-autocomplete-using-bootstrap-typeahead-js-example-with-demoexample.html -->
+    <script type="text/javascript">
+        var path = "{{ route('autocomplete') }}";
+        $('input.typeahead').typeahead({
+            source:  function (query, process) {
+            return $.get(path, { query: query }, function (data) {
+                    return process(data);
+                });
+            }
+        });
+    </script>
+
+    @if(count($errors) > 0)
+        <div class="row">
+            <div class="col-md-12">
+                <div class='alert alert-danger'>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @endif
+
 @endsection
 
 @section('content')

@@ -148,3 +148,9 @@ img {
   margin:auto;
   width:100%;
 }
+
+.textarea-addon{
+    background-color: #fff;
+    border-left: none;
+    border-right: none;
+}
