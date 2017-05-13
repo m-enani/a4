@@ -33,8 +33,8 @@
         <div class="navContainer">
             <ul>
                 <li class="navBar"><a href="/">LunchOUT!</a></li>
-                <li class="navBar" style="float:right"><a href="#">Sign up</a></li>
-                <li class="navBar" style="float:right"><a href="#">Log in</a></li>
+                <li class="navBar" style="float:right"><a href="#"><span class="btn" id="join">JOIN</span></a></li>
+                <li class="navBar" style="float:right"><a href="#"><span class="glyphicon glyphicon-user" id="user"></span></a></li>
             </ul>
         </div>
     </div>

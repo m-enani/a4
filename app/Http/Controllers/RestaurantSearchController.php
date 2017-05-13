@@ -13,20 +13,16 @@ class RestaurantSearchController extends Controller
     {
 
         $data = Category::select("name")->where("name","LIKE","{$request->input('query')}%")->get();
-        if($data->count()){
             return response()->json($data);
-        }
-        else{
-            return  response()->array('No Results Found!');
-        }
     }
 
     public function search(Request $request){
 
+        // dd($request->all());
 
         $rules = [
             'location' => 'required',
-            'type' => 'exists:categories,name',
+            'type' => 'nullable|exists:categories,name',
         ];
 
         $customMessages = [
@@ -35,7 +31,14 @@ class RestaurantSearchController extends Controller
 
         $this->validate($request, $rules, $customMessages);
 
-        $type= (Category::select("search_term")->where("name",$request->input('type'))->get())->toArray();
+        # Checks if user entered a restaurant type
+        if($request->input('type')){
+            $type = (Category::select("search_term")->where("name",$request->input('type'))->get())->toArray();
+            $type = $type[0]['search_term'];
+        }
+        else{
+            $type = "";
+        }
 
         $curl = curl_init();
 
@@ -43,7 +46,8 @@ class RestaurantSearchController extends Controller
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=5&sort_by=rating&categories=".$type[0]['search_term']."&location=".$request->input('location'),
+          CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=5&sort_by=rating&categories=".$type."&radius=".$request->input('radius')."&location="
+          .$request->input('location')."&price=".$request->input('price'),
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,

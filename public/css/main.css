@@ -70,6 +70,27 @@ body {
     margin-left: 460px;
 }
 
+#radiusBox {
+    /*margin-top: 250px;*/
+    max-width: 1000px;
+    margin-right: 460px;
+    margin-left: 560px;
+}
+
+#radiusBox span{
+    color: #2E4052;
+    font-weight: bolder;
+    font-size: 16px;
+    margin-right: -8px;
+    text-decoration: underline;
+
+}
+
+#radiusBox label{
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: -7px;
+}
 
 #searchButton{
     background-color: #581F18;
@@ -153,4 +174,19 @@ img {
     background-color: #fff;
     border-left: none;
     border-right: none;
+    color: #1569bd;
+    font-weight: 500;
+}
+
+#join{
+    background-color: #ffffff;
+    color: #581F18;
+    font-weight: bold;
+    margin: -5px;
+    border-width: thin;
+}
+
+#user{
+    font-size: 22px;
+    padding-right: 10px;
 }
