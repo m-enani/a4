@@ -59,20 +59,6 @@ body {
     }
 }
 
-#searchBox {
-    margin-top: 250px;
-    max-width: 1000px;
-    margin-right: 460px;
-    margin-left: 460px;
-}
-
-
-#searchButton{
-    background-color: #581F18;
-    color: #ffffff;
-    font-weight: bold;
-}
-
 .container-fluid {
   margin-top: 100px;
   max-width: 800px;
@@ -110,10 +96,24 @@ body {
   margin:auto;
   width:50%;
   margin-bottom: 20px;
-\
 }
 
+.search{
+    position: fixed;
+    margin-top: 75px;
+    margin-left: 1450px;
+    min-width: 400px;
+    max-width: 400px;
+}
 
+.search h3{
+    text-align: center;
+    background-color:  #581F18;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
 
 .navBar ul {
     list-style-type: none;

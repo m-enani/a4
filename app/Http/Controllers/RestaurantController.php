@@ -56,7 +56,7 @@ class RestaurantController extends Controller
 
         curl_setopt_array($curl, array(
           CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=10&sort_by=rating&categories=".$type."&radius=".$request->input('radius')."&location="
-          .$request->input('location')."&price=".$request->input('price'),
+          .$request->input('location')."&price=".$request->input('price')."#",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -84,8 +84,12 @@ class RestaurantController extends Controller
         } else {
             $i=0;
             foreach($restaurants['businesses'] as $restaurant){
+                foreach($restaurant['categories'] as $title){
+                    $titles [] =  $title['title'];
+                }
                 $filteredRestaurants[] = ['id' => $i,
                     'name' => $restaurant['name'],
+                    'yelpType' => implode(", ",$titles),
                     'image' => $restaurant['image_url'],
                     'address' => implode(" ",$restaurant['location']['display_address']),
                     'phone' => $restaurant['display_phone'],
@@ -94,55 +98,106 @@ class RestaurantController extends Controller
                     'url' => $restaurant['url'],
                 ];
 
+                unset($titles);
                 $i++;
             }
         }
 
-        // # sort the array by restaurant name
-        // $filteredRestaurants = array_values(array_sort($filteredRestaurants, function ($value) {
-        //     return $value;
-        // }));
-
-        // foreach($filteredRestaurants as $restaurant){
-        //     print_r($restaurant['image']);
-        // }
-
-
+        if (isset($_SESSION['choices'])) {
+            $userChoices = $_SESSION['choices'];
+        }
+        else {
+            $userChoices = [];
+        }
         return view('restaurants.results',[
             'filteredRestaurants' => $filteredRestaurants,
             'type' => $request->input('type'),
             'location' => $request->input('location'),
+            'choices' => $userChoices,
+            'exists' => false,
         ]);
     }
 
     public function add(Request $request){
 
-        // dd($request->all());
+        $id = $request->input('id');
+        $type = $request->input('yelpType'.$id);
+
         session_start();
         $filteredRestaurants = $_SESSION['restaurant'];
-        $type = $_SESSION['type'];
         $location = $_SESSION['location'];
-
-        $id = $request['id'];
-
-        // dd($request->input('address'.$id));
 
         $restaurant = new Choice();
         $restaurant->user_id = $_SESSION["newsession"];
         $restaurant->name = $request->input('name'.$id);
-        $restaurant->address= $request->input('address'.$id);
-        $restaurant->phone = $request->input('phone'.$id);
-        $restaurant->price = $request->input('price'.$id);
-        $restaurant->rating = $request->input('rating'.$id);
-        $restaurant->image_url = $request->input('image'.$id);
-        $restaurant->more_info = $request->input('url'.$id);
+        $restaurant->type = $type;
+        $restaurant->address= $request->input('address'.$id) ? : 'NA';
+        $restaurant->phone = $request->input('phone'.$id) ? : 'NA';
+        $restaurant->price = $request->input('price'.$id) ? : 'NA';
+        $restaurant->rating = $request->input('rating'.$id) ? : 'NA';
+        $restaurant->image_url = $request->input('image'.$id) ? : 'NA';
+        $restaurant->more_info = $request->input('url'.$id) ? : 'NA';
         $restaurant->save();
+
+        # Get current users choices
+        $userChoices = (Choice::where("user_id", '=', $_SESSION["newsession"])->get())->toArray();
+
 
         return view('restaurants.results',[
             'filteredRestaurants' => $filteredRestaurants,
             'type' => $type,
             'location' => $location,
+            'choices' => $userChoices,
+            'exists' => false,
         ]);
+    }
+
+    public function remove(Request $request){
+
+        session_start();
+        $filteredRestaurants = $_SESSION['restaurant'];
+        $location = $_SESSION['location'];
+        $id = $request['id'];
+        $type = $request->input('yelpType'.$id);
+
+        # Find restaurant to remove
+        Choice::where("user_id", '=', $_SESSION["newsession"])->where("name", $request->input('name'.$id))->delete();
+        // (Choice::where("user_id", '=', $_SESSION["newsession"])->where("name", $request->input('name'.$id))->get())->toArray();
+
+        # Get current users choices
+        $userChoices = (Choice::where("user_id", '=', $_SESSION["newsession"])->get())->toArray();
+
+        return view('restaurants.results',[
+            'filteredRestaurants' => $filteredRestaurants,
+            'type' => $type,
+            'location' => $location,
+            'choices' => $userChoices,
+            'exists' => false,
+        ]);
+
+    }
+
+    public function removechoice(Request $request){
+
+        session_start();
+        $filteredRestaurants = $_SESSION['restaurant'];
+        $location = $_SESSION['location'];
+        $id = $request['id'];
+        $type = $request->input('yelpType'.$id);
+
+        # Find restaurant to remove
+        Choice::find($request->input('id'))->delete();
+
+        # Get current users choices
+        $userChoices = (Choice::where("user_id", '=', $_SESSION["newsession"])->get())->toArray();
+
+        return view('restaurants.results',[
+            'filteredRestaurants' => $filteredRestaurants,
+            'type' => $type,
+            'location' => $location,
+            'choices' => $userChoices,
+            'exists' => false,
+        ]);;
     }
 
 }

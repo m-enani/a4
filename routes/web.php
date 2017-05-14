@@ -18,5 +18,7 @@ Route::get('/', function () {
 Route::get('/search', 'RestaurantController@search');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'RestaurantController@autocomplete'));
 Route::post('/add', 'RestaurantController@add');
+Route::post('/remove', 'RestaurantController@remove');
+Route::post('/removechoice', 'RestaurantController@removechoice');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
