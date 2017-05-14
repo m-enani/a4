@@ -49,9 +49,11 @@
         </section>
     </div>
     <div class="container-fluid">
-        <section>
-            @yield('content')
-        </section>
+        <div class="content">
+            <section>
+                @yield('content')
+            </section>
+        </div>
     </div>
     @stack('body')
 

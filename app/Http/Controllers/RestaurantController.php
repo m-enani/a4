@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Choice;
 
-class RestaurantSearchController extends Controller
+class RestaurantController extends Controller
 {
 
     # function used (with modification) from: http://itsolutionstuff.com/post/laravel-5-autocomplete-using-bootstrap-typeahead-js-example-with-demoexample.html
@@ -18,7 +19,15 @@ class RestaurantSearchController extends Controller
 
     public function search(Request $request){
 
-        // dd($request->all());
+        session_start();
+
+        # create random id to use for session id
+        if(!$_SESSION){
+            $random = md5(uniqid(mt_rand(), true));
+            $_SESSION["newsession"] = $random;
+        }
+
+        // dump($_SESSION['newsession']);
 
         $rules = [
             'location' => 'required',
@@ -46,7 +55,7 @@ class RestaurantSearchController extends Controller
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=5&sort_by=rating&categories=".$type."&radius=".$request->input('radius')."&location="
+          CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=10&sort_by=rating&categories=".$type."&radius=".$request->input('radius')."&location="
           .$request->input('location')."&price=".$request->input('price'),
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
@@ -75,9 +84,16 @@ class RestaurantSearchController extends Controller
         } else {
             $i=0;
             foreach($restaurants['businesses'] as $restaurant){
-                $filteredRestaurants[] = ['id'=> $i,
-                    'name'=>$restaurant['name'],
-                    'image'=>$restaurant['image_url']];
+                $filteredRestaurants[] = ['id' => $i,
+                    'name' => $restaurant['name'],
+                    'image' => $restaurant['image_url'],
+                    'address' => implode(" ",$restaurant['location']['display_address']),
+                    'phone' => $restaurant['display_phone'],
+                    'price' => $restaurant['price'],
+                    'rating' => $restaurant['rating'],
+                    'url' => $restaurant['url'],
+                ];
+
                 $i++;
             }
         }
@@ -91,8 +107,42 @@ class RestaurantSearchController extends Controller
         //     print_r($restaurant['image']);
         // }
 
-        return view('restaurants.search',[
-            'filteredRestaurants' => $filteredRestaurants
+
+        return view('restaurants.results',[
+            'filteredRestaurants' => $filteredRestaurants,
+            'type' => $request->input('type'),
+            'location' => $request->input('location'),
         ]);
     }
+
+    public function add(Request $request){
+
+        // dd($request->all());
+        session_start();
+        $filteredRestaurants = $_SESSION['restaurant'];
+        $type = $_SESSION['type'];
+        $location = $_SESSION['location'];
+
+        $id = $request['id'];
+
+        // dd($request->input('address'.$id));
+
+        $restaurant = new Choice();
+        $restaurant->user_id = $_SESSION["newsession"];
+        $restaurant->name = $request->input('name'.$id);
+        $restaurant->address= $request->input('address'.$id);
+        $restaurant->phone = $request->input('phone'.$id);
+        $restaurant->price = $request->input('price'.$id);
+        $restaurant->rating = $request->input('rating'.$id);
+        $restaurant->image_url = $request->input('image'.$id);
+        $restaurant->more_info = $request->input('url'.$id);
+        $restaurant->save();
+
+        return view('restaurants.results',[
+            'filteredRestaurants' => $filteredRestaurants,
+            'type' => $type,
+            'location' => $location,
+        ]);
+    }
+
 }

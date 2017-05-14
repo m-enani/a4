@@ -25,7 +25,7 @@
               <option value='1,2,3,4'>$$$$</option>
             </select>
             <span class="input-group-addon textarea-addon">Type</span>
-            <input type="search" class="typeahead form-control" autocomplete="off" name="type" placeholder="ex. 'Japanase'">
+            <input type="search" class="typeahead form-control" autocomplete="off" name="type" placeholder="ex. 'Japanese'">
             <span type="submit" class="input-group-btn">
                 <button type="submit" class="btn btn-secondary" id="searchButton" type="button">Find Lunch!</button>
             </span>
@@ -75,12 +75,15 @@
 @section('content')
 
     <h2>Welcome to <span>LunchOUT!</span></h2>
-
+    <h3>ABOUT</h3>
     <p>LunchOUT! is an app built to make planning lunch out with your friends, coworker, or whomever else you make be inclined to dine with a whole lot easier!
-         Simply compile a list of five choices, share the link with your friends, and everyone gets to vote. Having a difficult time choosing one of the great restaurants on
-         your list? The random button has you covered. If the majority of your crew chooses random, one of the restaurants on your list will be chosen at, you guessed it, random.
+         Simply compile a list of five choices, share the link with your friends, and everyone gets to vote.
     </p>
-
+    <h3>VOTING</h3>
+    <p>Having a difficult time choosing one of the great restaurants on your list? The random button has you covered. If the majority of your crew chooses random,
+         one of the restaurants on your list will be chosen at, you guessed it, random.
+    </p>
+    <h3>SIGN UP!</h3>
     <p>Go out to lunch often? Want to keep track of all the places you've been to recently? Create an account and you can do all that and more!</p>
 
 @endsection

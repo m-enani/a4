@@ -13,8 +13,14 @@ h1, h2 {
 
 h2{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
+}
+
+h3{
+    margin-left: 20px;
+    color: #581F18;
+    font-weight: bold;
 }
 
 
@@ -25,7 +31,7 @@ h2{
  }
 
  p {
-     font-weight: bold;
+     font-weight: 400;
      margin-left: 20px;
      margin-right: 20px;
      margin-top: 15px;
@@ -99,16 +105,21 @@ body {
 }
 
 .container-fluid {
-  margin-top: 100px;
-  max-width: 1000px;
-  min-height: 40vh;
-  max-height: 46vh;
+  margin-top: 175px;
+  /*max-width: 1000px;*/
+  min-height: 60vh;
+  /*max-height: 46vh;*/
   width: auto;
   background-color: #ffffff;
   /*max-width: 600px;
   min-width:600px;*/
-  border-radius: 10px;
-  opacity: .9;
+  /*border-radius: 10px;*/
+  /*opacity: .9;*/
+}
+
+.content {
+    margin-left: 400px;
+    margin-right: 400px;
 }
 
 .row {
