@@ -20,14 +20,10 @@ Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'RestaurantControll
 
 Route::post('/add', 'RestaurantController@add');
 
-Route::get('/share', 'RestaurantController@share');
+Route::get('/vote', 'RestaurantController@vote');
 
 Route::post('/remove', 'RestaurantController@remove');
 Route::post('/removechoice', 'RestaurantController@removechoice');
-
-Route::post('/vote', 'RestaurantController@vote');
-
-Route::post('/send', 'EmailController@send');
 
 if(config('app.env') == 'local') {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

@@ -51,6 +51,9 @@ class RestaurantController extends Controller
 
         $curl = curl_init();
 
+        // FOR TESTING ONLY!!!! REMOVE BEFORE PULLING TO PROD!
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
         # check if location entry is already a zip code
         if (is_int($request->input('location'))) {
             $location = $request->input('location');

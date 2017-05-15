@@ -15,7 +15,7 @@
 @endpush
 
 @section('search')
-    <div class="choices ">
+    <div class="choices" id="choicesTable">
         <h3>Your Current Choices</h3>
         <table class="table table-striped">
             <thead>
@@ -35,7 +35,8 @@
 
                         {{ csrf_field() }}
 
-                        <input type='hidden' name='id' value='{{$choice['id']}}'>
+                        <input type='hidden' name='id'value='{{$choice['id']}}'>
+                        <input type='hidden' name='userid' id="userid{{$choice['id']}}" value='{{$choice['user_id']}}'>
                         <button type='submit' class="btn btn-danger btn-xs" id="removeChoice">
                             <span class="glyphicon glyphicon-remove"></span>
                         </button>
@@ -46,8 +47,21 @@
             </tbody>
           </table>
           @if (count($choices))
-            <a href="\share" class="btn btn-success pull-right">Gather Votes!</a>
+            <button class="btn btn-success pull-right" onclick="generateLink()">Gather Votes!</button>
           @endif
+          <script>
+                function generateLink() {
+                    if(!document.getElementById("link")) {
+                        var element = document.createElement("input");
+                        element.setAttribute("value", window.location.origin  +  "/vote/" + document.getElementById('userid{{$choice['id']}}').value);
+                        element.setAttribute("class","form-control");
+                        element.setAttribute("id", "link")
+                        document.getElementById("choicesTable").appendChild(element);
+                        document.getElementById("link").select();
+                        document.execCommand("copy");
+                    }
+                }
+          </script>
     </div>
 @endsection
 
