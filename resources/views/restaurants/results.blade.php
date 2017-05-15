@@ -46,14 +46,20 @@
             @endforeach
             </tbody>
           </table>
+          @php
+            $id = '';
+          @endphp
           @if (count($choices))
             <button class="btn btn-success pull-right" onclick="generateLink()">Gather Votes!</button>
+            @php
+                $id = $choice['id'];
+            @endphp
           @endif
           <script>
                 function generateLink() {
                     if(!document.getElementById("link")) {
                         var element = document.createElement("input");
-                        element.setAttribute("value", window.location.origin  +  "/vote/" + document.getElementById('userid{{$choice['id']}}').value);
+                        element.setAttribute("value", window.location.origin  +  "/vote/" + document.getElementById('userid{{$id}}').value);
                         element.setAttribute("class","form-control");
                         element.setAttribute("id", "link")
                         document.getElementById("choicesTable").appendChild(element);
