@@ -54,9 +54,17 @@ class RestaurantController extends Controller
         // FOR TESTING ONLY!!!! REMOVE BEFORE PULLING TO PROD!
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
+        # check if location entry is already a zip code
+        if (is_int($request->input('location'))) {
+            $location = $request->input('location');
+        }
+        else {
+            $location = str_replace(' ', '-',  $request->input('location'));
+        }
+
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=10&sort_by=rating&categories=".$type."&radius=".$request->input('radius')."&location="
-          .$request->input('location')."&price=".$request->input('price')."#",
+          CURLOPT_URL => "https://api.yelp.com/v3/businesses/search?term=restaurant&limit=10&sort_by=rating&categories=".$type."&radius=".$request->input('radius')."&location='"
+          .$location."'&price=".$request->input('price'),
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -112,7 +120,7 @@ class RestaurantController extends Controller
         return view('restaurants.results',[
             'filteredRestaurants' => $filteredRestaurants,
             'type' => $request->input('type'),
-            'location' => $request->input('location'),
+            'location' => ucwords($request->input('location')),
             'choices' => $userChoices,
             'exists' => false,
         ]);
@@ -142,10 +150,12 @@ class RestaurantController extends Controller
         # Get current users choices
         $userChoices = (Choice::where("user_id", '=', $_SESSION["newsession"])->get())->toArray();
 
+        $anchor = $request->input('name'.$id);
 
         return view('restaurants.results',[
+            'anchor' => $anchor,
             'filteredRestaurants' => $filteredRestaurants,
-            'type' => $type,
+            'type' => ucwords($type),
             'location' => $location,
             'choices' => $userChoices,
             'exists' => false,
@@ -198,6 +208,27 @@ class RestaurantController extends Controller
             'choices' => $userChoices,
             'exists' => false,
         ]);;
+    }
+
+    public function share(Request $request){
+
+        // $emails = explode(",", $request->input('emails'));
+        //
+        // foreach ($emails as $email){
+        //     $to = $email;
+        //     $subject = $request->input('name')." would like you to vote for LunchOUT!";
+        //     $txt = "Time to get your vote on! Have your say on were to go to lunch by clicking on the link below. Happy LunchOUT!";
+        //     $headers = "From: " .$request->input('senderEmail'). "\r\n";
+        //
+        //     mail($to,$subject,$txt,$headers);
+        // }
+        //
+
+        return view('restaurants.share');
+    }
+
+    public function vote(Request $request){
+        return view('restaurants.vote');
     }
 
 }

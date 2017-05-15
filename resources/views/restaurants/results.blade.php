@@ -8,8 +8,9 @@
     <link href='css/results.css' rel='stylesheet'>
 
     <!-- <script type="text/javascript">
-        $('.search').load(document.URL +  ' #.search');
-        $('.displayChoices').load(document.URL +  '.displayChoices');
+        $(function () {
+            window.location = '#' + $anchor;
+        });
     </script> -->
 @endpush
 
@@ -31,8 +32,10 @@
                 <td>{{$choice['type']}}</td>
                 <td>
                     <form id="listForm{{$choice['id']}}" method='POST' action="/removechoice">
+
                         {{ csrf_field() }}
-                        <input type='hidden' name='id' value='{{$choice['id']}}' >
+
+                        <input type='hidden' name='id' value='{{$choice['id']}}'>
                         <button type='submit' class="btn btn-danger btn-xs" id="removeChoice">
                             <span class="glyphicon glyphicon-remove"></span>
                         </button>
@@ -42,16 +45,15 @@
             @endforeach
             </tbody>
           </table>
+          @if (count($choices))
+            <a href="\share" class="btn btn-success pull-right">Gather Votes!</a>
+          @endif
     </div>
 @endsection
 
 @section('content')
 
-        @if ($type)
-            <h2>Results for {{$type}} restaurants in {{$location}}</h2>
-        @else
-            <h2>Results for restaurants in {{$location}}</h2>
-        @endif
+        <h2>Results for restaurants in {{$location}}</h2>
 
         @foreach($filteredRestaurants as $restaurant)
             <div class="row">

@@ -46,6 +46,11 @@ body {
   background-size: cover;
 }
 
+hr {
+
+
+}
+
 .navBar {
     background-color: #581F18;
 
@@ -161,21 +166,6 @@ img {
     border-top: 2px dashed #ccc;
     max-width: 700px;
 }
-
-.carousel-control.left, .carousel-control.right {
-    background-image: none
-}
-
-/*.imageContainer{
-    overflow: hidden;
-    width: 90px;
-    height: 90px;
-}*/
-
-/*.carouselImage{
-    width: 180px;
-    height: 180px;
-}*/
 
 .input-group-addon {
     min-width:50px;
