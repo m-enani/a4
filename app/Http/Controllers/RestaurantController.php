@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Choice;
+use App\Rank;
 
 class RestaurantController extends Controller
 {
@@ -207,28 +208,43 @@ class RestaurantController extends Controller
             'location' => $location,
             'choices' => $userChoices,
             'exists' => false,
-        ]);;
-    }
-
-    public function share(Request $request){
-
-        // $emails = explode(",", $request->input('emails'));
-        //
-        // foreach ($emails as $email){
-        //     $to = $email;
-        //     $subject = $request->input('name')." would like you to vote for LunchOUT!";
-        //     $txt = "Time to get your vote on! Have your say on were to go to lunch by clicking on the link below. Happy LunchOUT!";
-        //     $headers = "From: " .$request->input('senderEmail'). "\r\n";
-        //
-        //     mail($to,$subject,$txt,$headers);
-        // }
-        //
-
-        return view('restaurants.share');
+        ]);
     }
 
     public function vote(Request $request){
-        return view('restaurants.vote');
+
+        $parts = parse_url($_SERVER['QUERY_STRING']);
+
+        # Get vote initiater's choices
+        $userChoices = (Choice::where("user_id", '=', $parts)->get())->toArray();
+        $ranks = Rank::all()->toArray();
+
+        return view('restaurants.vote',[
+            'choices' => $userChoices,
+            'ranks' => $ranks,
+        ]);
+    }
+
+
+    public function tally(Request $request){
+
+        // dd($request->all());
+
+        $count = 0;
+
+        $entries[] = $request->all() ;
+
+        foreach($entries as $entry){
+
+            $choice = Choice::where('id', $entry['id'.$count])->first();
+            $rank = Rank::where('description',  $entry['rank'.$count])->first();
+
+            $choice->ranks()->save($rank);
+
+            $count +=1;
+        }
+
+        return view('restaurants.entered');
     }
 
 }

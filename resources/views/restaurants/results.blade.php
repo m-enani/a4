@@ -59,7 +59,7 @@
                 function generateLink() {
                     if(!document.getElementById("link")) {
                         var element = document.createElement("input");
-                        element.setAttribute("value", window.location.origin  +  "/vote/" + document.getElementById('userid{{$id}}').value);
+                        element.setAttribute("value", window.location.origin  +  "/vote/number?" + document.getElementById('userid{{$id}}').value);
                         element.setAttribute("class","form-control");
                         element.setAttribute("id", "link")
                         document.getElementById("choicesTable").appendChild(element);
@@ -118,9 +118,9 @@
                         @endif
 
                         @if ($exists == true)
-                            <button type="submit" class="btn btn-danger btn-md pull-right"  id="remove{{$restaurant['id']}}">Remove from list</button>
+                            <button type="submit" class="btn btn-danger btn-md"  id="remove{{$restaurant['id']}}">Remove from list</button>
                         @else
-                            <button type="submit" class="btn btn-primary btn-md pull-right" id="add{{$restaurant['id']}}">Add to list</button>
+                            <button type="submit" class="btn btn-primary btn-md" id="add{{$restaurant['id']}}">Add to list</button>
                         @endif
 
                         @php

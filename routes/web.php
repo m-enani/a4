@@ -20,7 +20,9 @@ Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'RestaurantControll
 
 Route::post('/add', 'RestaurantController@add');
 
-Route::get('/vote', 'RestaurantController@vote');
+Route::get('/vote/{id}', 'RestaurantController@vote');
+Route::post('/tally', 'RestaurantController@tally');
+
 
 Route::post('/remove', 'RestaurantController@remove');
 Route::post('/removechoice', 'RestaurantController@removechoice');

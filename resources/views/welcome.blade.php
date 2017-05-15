@@ -5,7 +5,7 @@
 @endsection
 
 @push('head')
-    <link href='css/main.css' rel='stylesheet'>
+    <link href='/css/main.css' rel='stylesheet'>
 @endpush
 
 <!-- @section('header')
