@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Choice;
+use App\Link;
 use App\Rank;
+use App\Voter;
 
 class RestaurantController extends Controller
 {
@@ -51,9 +53,6 @@ class RestaurantController extends Controller
         }
 
         $curl = curl_init();
-
-        // FOR TESTING ONLY!!!! REMOVE BEFORE PULLING TO PROD!
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         # check if location entry is already a zip code
         if (is_int($request->input('location'))) {
@@ -172,8 +171,16 @@ class RestaurantController extends Controller
         $type = $request->input('yelpType'.$id);
 
         # Find restaurant to remove
-        Choice::where("user_id", '=', $_SESSION["newsession"])->where("name", $request->input('name'.$id))->delete();
-        // (Choice::where("user_id", '=', $_SESSION["newsession"])->where("name", $request->input('name'.$id))->get())->toArray();
+        $deleteChoice = Choice::where("user_id", '=', $_SESSION["newsession"])->where("name", $request->input('name'.$id))->first();
+
+        # Check if associated with rank (pivot table)
+        $hasRank = $deleteChoice->toArray();
+
+        if (Rank::where('id', $hasRank['id'])) {
+            $deleteChoice->ranks()->detach();
+        }
+
+        $deleteChoice->delete();
 
         # Get current users choices
         $userChoices = (Choice::where("user_id", '=', $_SESSION["newsession"])->get())->toArray();
@@ -197,7 +204,16 @@ class RestaurantController extends Controller
         $type = $request->input('yelpType'.$id);
 
         # Find restaurant to remove
-        Choice::find($request->input('id'))->delete();
+        $deleteChoice = Choice::find($request->input('id'));
+
+        $hasRank = $deleteChoice->toArray();
+
+        # Check if associated with rank (pivot table)
+        if (Rank::where('id', $hasRank['id'])) {
+            $deleteChoice->ranks()->detach();
+        }
+
+        $deleteChoice->delete();
 
         # Get current users choices
         $userChoices = (Choice::where("user_id", '=', $_SESSION["newsession"])->get())->toArray();
@@ -213,15 +229,41 @@ class RestaurantController extends Controller
 
     public function vote(Request $request){
 
-        $parts = parse_url($_SERVER['QUERY_STRING']);
+        # Get values from url
+        $parameters= implode( parse_url($_SERVER['QUERY_STRING']));
+
+        $parameters = explode("&", $parameters);
+        $invitation = $parameters[0];
+        $time = $parameters[1];
+
+        # check if valid integer
+        if(!is_int($time)){
+            $time = 60;
+        }
+        else if($time <= 0){
+            $time = 60;
+        }
+
+        # save created link if not already in table
+
+        $found = Link::where("user_id", $invitation)->first();
+
+        if (is_null($found)){
+            $link = new Link();
+            $link->user_id = $invitation;
+            $link->expires = $time;
+            $link->save();
+        }
 
         # Get vote initiater's choices
-        $userChoices = (Choice::where("user_id", '=', $parts)->get())->toArray();
+        $userChoices = (Choice::where("user_id", '=', $invitation)->get())->toArray();
         $ranks = Rank::all()->toArray();
 
         return view('restaurants.vote',[
             'choices' => $userChoices,
             'ranks' => $ranks,
+            'invitation' => $userChoices[0]['user_id'],
+            'time' => $time,
         ]);
     }
 
@@ -230,21 +272,51 @@ class RestaurantController extends Controller
 
         // dd($request->all());
 
-        $count = 0;
+        # check if the person has already voted
+        $voted = Voter::where('name',$request->input('name'))->where('invitation', $request->input('invitation'))->first();
 
-        $entries[] = $request->all() ;
+        if (!isset($voted)) {
 
-        foreach($entries as $entry){
+            $count = 0;
 
-            $choice = Choice::where('id', $entry['id'.$count])->first();
-            $rank = Rank::where('description',  $entry['rank'.$count])->first();
+            $entries[] = $request->all() ;
 
-            $choice->ranks()->save($rank);
+            foreach($entries as $entry){
 
-            $count +=1;
+                $choice = Choice::where('id', $entry['id'.$count])->first();
+                $rank = Rank::where('description',  $entry['rank'.$count])->first();
+
+                $choice->ranks()->save($rank);
+
+                $count +=1;
+            }
+
+            $voter= new Voter();
+            $voter->name = $request->input('name');
+            $voter->invitation = $request->input('invitation');
+            $voter->save();
+
+            $repeat = false;
+        }
+        else{
+            $repeat = true;
         }
 
-        return view('restaurants.entered');
+        # get expiration time
+        $link = Link::where('user_id', $request->input('invitation'))->get()->toArray();
+
+        $expires = date_create($link[0]['created_at']);
+
+        return view('restaurants.entered',[
+            'invitation' => $request->input('invitation'),
+            'expires' => $expires,
+        ]);
     }
 
+    // coming soon!
+    public function winner(Request $request){
+
+        $invitation = parse_url($_SERVER['QUERY_STRING']);
+
+    }
 }

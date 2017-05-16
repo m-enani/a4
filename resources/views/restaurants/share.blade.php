@@ -10,6 +10,8 @@
 
 @section('content')
 
+    <!-- Implementing in the future! -->
+
     <h2>Time to for some democracy!</h2>
     <h4 style="text-align:center">Enter the emails for as many - or as few - friends as you would like below.</h4>
     <form class="form-horizontal" method='post' action="\send">

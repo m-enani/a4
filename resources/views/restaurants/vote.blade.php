@@ -33,19 +33,12 @@
                         <input type='hidden' name='id{{$count}}' value='{{$choice['id']}}'>
                     </div>
                     <div class="displayChoices col-md-8">
-                        <!-- <input type='hidden' name='image{{$choice['id']}}' value='{{$choice['image_url']}}'> -->
                         <h4><span>{{$choice['name']}}</span><hr class='storeName'></h4>
-                        <!-- <input type='hidden' name='name{{$choice['id']}}' value='{{$choice['name']}}'> -->
                         <h5>Address: <span>{{$choice['address']}}</span></h5>
-                        <!-- <input type='hidden' name='address{{$choice['id']}}' value='{{$choice['address']}}'> -->
                         <h5>Phone: <span>{{$choice['phone']}}</span></h5>
-                        <!-- <input type='hidden' name='phone{{$choice['id']}}' value='{{$choice['phone'] }}'> -->
                         <h5>Price: <span>{{$choice['price']}}</span></h5>
-                        <!-- <input type='hidden' name='price{{$choice['id']}}' value='{{$choice['price']}}'> -->
                         <h5>Rating: <span>{{$choice['rating']}}/5</span></h5>
-                        <!-- <input type='hidden' name='rating{{$choice['id']}}' value='{{$choice['rating']}}'> -->
                         <h5><a href="{{$choice['more_info']}}">Find out more!</a></h5>
-                        <!-- <input type='hidden' name='id' value='{{$choice['id']}}'> -->
                     </div>
                     <div class="row">
                         <div class="col-md-8"></div>
@@ -70,14 +63,18 @@
                         <span class="glyphicon glyphicon-check" id="checkImg"></span>
                     </div>
                     <div class="col-md-8" id="voterEntry">
-                        <Label id="voterNameLbl">Enter your name and vote!</label>
-                        <input type="text" class="form-control inline" name="name" id="voterName" placeholder="Your Name" required="true">
+                        <Label id="voterNameLbl">* Enter your name and vote!</label>
+                        <input type="text" class="form-control inline" name="name" id="voterName" placeholder="Enter your full name" required="true">
                         <button type="submit" class="btn btn-md inline" id="voteBtn">Cast my vote!</button>
                     </div>
+                    <input type='hidden' name=invitation value='{{$invitation}}'>
+                    <input type='hidden' name=time value='{{$time}}'>
+                    <small class="pull-right" id="message">* Required. Multiple entries from the same user will only be counted once.</small>
             </form>
         </div>
+
     @else
-        <h2>Looks like some changed their mind...all the LunchOUT! options where removed!</h2>
+        <h2>Looks like some changed their mind...all the <span>LunchOUT!</span> options where removed!</h2>
     @endif
 
 

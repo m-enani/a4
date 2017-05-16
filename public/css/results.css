@@ -1,16 +1,3 @@
-h2 {
-  /*padding-top: 15px;*/
-  /*padding: 10px;*/
-  /*background-color: #581F18;*/
-  /*color: #ffffff;*/
-  /*margin-top: 0;*/
-  /*position: relative;*/
-}
-
-h1, h2 {
-
-}
-
 h2{
     text-align: center;
     margin-top: 20px;
@@ -38,17 +25,10 @@ h2{
 
 body {
   color: #042A2B;
-  /*background-color: #202C59;*/
-
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-}
-
-hr {
-
-
 }
 
 .navBar {
@@ -56,6 +36,7 @@ hr {
 
 }
 
+/*implement for mobile*/
 @media only screen and (min-width: 768px) {
     .navContainer {
         min-width: 500px;
@@ -70,10 +51,6 @@ hr {
   min-height: 40vh;
   max-height: 46vh;
   width: auto;
-  /*background-color: #d3d3d3;*/
-  /*max-width: 600px;
-  min-width:600px;*/
-
 }
 
 .row {
@@ -151,7 +128,6 @@ img {
     max-width: 200px;
     max-height: 200px;
     height: auto;
-    /*margin-bottom: 100px;*/
     border-radius: 5px;
 }
 
@@ -183,4 +159,24 @@ img {
 #user{
     font-size: 22px;
     padding-right: 10px;
+}
+
+#linkBtn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#share{
+    min-width: 200px;
+    min-height: 100px;
+    margin-top: 20px;
+}
+
+#linkLbl {
+    margin-top: 20px;
+}
+
+#timer{
+    max-width: 275px;
+    margin-left: 125px;
 }

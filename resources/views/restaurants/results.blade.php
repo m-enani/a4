@@ -7,6 +7,7 @@
 @push('head')
     <link href='css/results.css' rel='stylesheet'>
 
+    <!-- implement anchors -->
     <!-- <script type="text/javascript">
         $(function () {
             window.location = '#' + $anchor;
@@ -50,7 +51,11 @@
             $id = '';
           @endphp
           @if (count($choices))
-            <button class="btn btn-success pull-right" onclick="generateLink()">Gather Votes!</button>
+            <Label id="linkLbl">Ready? Enter an expiration time (mins) and gather votes!</label>
+            <div id="share">
+                <input type="number" class="form-control" name="time" id="timer" placeholder="Link expiration (default 60 minutes)" required="true">
+                <button class="btn btn-success pull-right" id="linkBtn" onclick="generateLink()">Gather Votes!</button>
+            <div>
             @php
                 $id = $choice['id'];
             @endphp
@@ -58,13 +63,24 @@
           <script>
                 function generateLink() {
                     if(!document.getElementById("link")) {
+                        var message = document.createElement("p");
+                        message.setAttribute("id", "message");
+                        message.setAttribute("style", "margin-top:5px;");
+                        message.setAttribute("style", "margin-left:0px;");
+                        message.innerHTML = "Here is you link. It has been copied to your clipboard!";
+                        document.getElementById("choicesTable").appendChild(message);
+
                         var element = document.createElement("input");
-                        element.setAttribute("value", window.location.origin  +  "/vote/number?" + document.getElementById('userid{{$id}}').value);
+                        element.setAttribute("value", window.location.origin  +  "/vote/number?" + document.getElementById('userid{{$id}}').value + "&" + Math.abs(document.getElementById('timer').value));
                         element.setAttribute("class","form-control");
                         element.setAttribute("id", "link")
                         document.getElementById("choicesTable").appendChild(element);
                         document.getElementById("link").select();
+                        document.getElementById("linkBtn").innerHTML  = "Copied!";
                         document.execCommand("copy");
+
+
+
                     }
                 }
           </script>
@@ -118,9 +134,9 @@
                         @endif
 
                         @if ($exists == true)
-                            <button type="submit" class="btn btn-danger btn-md"  id="remove{{$restaurant['id']}}">Remove from list</button>
+                            <button type="submit" class="btn btn-danger btn-md pull-right"  id="remove{{$restaurant['id']}}">Remove from list</button>
                         @else
-                            <button type="submit" class="btn btn-primary btn-md" id="add{{$restaurant['id']}}">Add to list</button>
+                            <button type="submit" class="btn btn-primary btn-md pull-right" id="add{{$restaurant['id']}}">Add to list</button>
                         @endif
 
                         @php

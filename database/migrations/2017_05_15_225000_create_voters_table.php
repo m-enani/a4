@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Carbon\Carbon;
 
-class CreateRanksTable extends Migration
+class CreateVotersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,16 +15,15 @@ class CreateRanksTable extends Migration
     {
 
 
-
-        $current_time = \Carbon\Carbon::now()->toDateTimeString();
-
-        Schema::create('ranks', function (Blueprint $table) {
+        Schema::create('voters', function (Blueprint $table) {
 
             $table->increments('id');
             $table->timestamps();
-            $table->string('description');
-            $table->string('value');
+            $table->string('name');
+            $table->string('invitation');
+
         });
+
     }
 
     /**
@@ -35,6 +33,6 @@ class CreateRanksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ranks');
+        Schema::drop('voters');
     }
 }

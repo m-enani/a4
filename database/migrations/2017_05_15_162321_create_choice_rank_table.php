@@ -13,6 +13,12 @@ class CreateChoiceRankTable extends Migration
      */
     public function up()
     {
+
+
+
+
+        $current_time = \Carbon\Carbon::now()->toDateTimeString();
+
         Schema::create('choice_rank', function (Blueprint $table){
 
             $table->increments('id');

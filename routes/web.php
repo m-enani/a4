@@ -23,6 +23,8 @@ Route::post('/add', 'RestaurantController@add');
 Route::get('/vote/{id}', 'RestaurantController@vote');
 Route::post('/tally', 'RestaurantController@tally');
 
+// implement later
+// Route::get('/winner/{id}', 'RestaurantController@winner');
 
 Route::post('/remove', 'RestaurantController@remove');
 Route::post('/removechoice', 'RestaurantController@removechoice');
